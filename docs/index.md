@@ -16,7 +16,7 @@ for<br>
 
 ## Introduction
 
-* This needs to be updated so that a reader gets an idea of the purpose of this datasheet. I really should have done this sooner LOL
+* This needs to be updated so that a reader gets an idea of the purpose of this datasheet. I really should have done this sooner LOL. Attempt 2?
 
 ### Project Summary
 
