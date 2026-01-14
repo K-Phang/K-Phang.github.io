@@ -5,11 +5,11 @@ tags:
 - tag2
 ---
 <center>
-<font size= "6">(Your Name) Datasheet</font><br>
+<font size= "6">K Phang Datasheet</font><br>
 as part of<br>
-<font size= "8"> Project Name</font><br>
+<font size= "8"> Rover Project</font><br>
 for<br>
-<font size= "5"> Team ### </font><br>
+<font size= "5"> Team 201 </font><br>
 
 **Submission: month, DD, YYYY**
 </center>
