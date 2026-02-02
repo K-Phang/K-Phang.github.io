@@ -26,7 +26,7 @@
 
     
       
-        <title>Module's Requirements - EGR 314 K Phang Data Sheet</title>
+        <title>Module Requirements - EGR 314 K Phang Data Sheet</title>
       
     
     
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Module's Requirements
+              Module Requirements
             
           </span>
         </div>
@@ -471,7 +471,7 @@
           
   
   <span class="md-ellipsis">
-    Module's Requirements
+    Module Requirements
   </span>
   
 
@@ -482,7 +482,7 @@
         
   
   <span class="md-ellipsis">
-    Module's Requirements
+    Module Requirements
   </span>
   
 
@@ -822,43 +822,93 @@
   
 
 
-  <h1>Module's Requirements</h1>
+  <h1>Module Requirements</h1>
 
 <h2 id="module-requirements">Module Requirements</h2>
-<p>The following sections document the requirements that the this module need to fulfills to .....</p>
+<p>The following table outlines the functional and design constraints for the propulsion module.<br>
+This subsystem is responsible for controlling a DC motor-driven propeller capable of forward and reverse motion with variable speed control. The module integrates power regulation, communication, motor driving, and feedback from an incremental encoder to support closed-loop motor operation within the overall team system.</p>
+<p>The table includes minimum threshold values for basic operation, target performance levels for optimal system behavior, and identifies stretch requirements that extend beyond baseline functionality.</p>
 <table>
 <thead>
 <tr>
 <th><strong>Requirement Description</strong></th>
-<th><strong>Measure of<br> Threshold</strong></th>
+<th><strong>Measure of<br>Threshold</strong></th>
 <th><strong>Target<br>Measure</strong></th>
 <th style="text-align: center;"><strong>Stretch<br>Requirement<br>(Y-N)</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Surface mounted, 3.3V switching power regulatore</td>
-<td>3.2 Volts</td>
-<td>3.3 Volts</td>
+<td>Surface mounted 3.3V switching power regulator</td>
+<td>3.2 V output</td>
+<td>3.3 V regulated output</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Surface mounted microcontroller</td>
-<td>1 PIC or ESP</td>
-<td>8-bit PIC</td>
+<td>ESP32</td>
+<td>ESP32 handling control, UART, and encoder processing</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Wireless Communication</td>
-<td>Able to send or receive a Wi-Fi data</td>
-<td>Send and receive Wi-Fi Data to MQTT</td>
+<td>UART bus communication</td>
+<td>Able to receive motor commands from A1</td>
+<td>Reliable bidirectional UART communication with A1</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Power sharing</td>
+<td>Able to receive power from terminal or pin header</td>
+<td>Powered through shared system bus</td>
 <td style="text-align: center;">Yes</td>
 </tr>
 <tr>
-<td><em>Rest are items your modules needs to support the task you are covering for the team's device.</em></td>
-<td>---</td>
-<td>---</td>
-<td style="text-align: center;"><strong>NO</strong></td>
+<td>Motor type</td>
+<td>DC motor without feedback</td>
+<td>DC gearmotor with incremental encoder</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Motor driver interface</td>
+<td>Basic motor on/off control</td>
+<td>H-bridge motor driver enabling bidirectional PWM control</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Forward motor control</td>
+<td>Motor rotates forward</td>
+<td>Smooth forward propulsion under load</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Reverse motor control</td>
+<td>Motor rotates backward</td>
+<td>Smooth reverse propulsion under load</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Motor speed control</td>
+<td>Limited discrete speed levels</td>
+<td>Continuous PWM-based speed control</td>
+<td style="text-align: center;">Yes</td>
+</tr>
+<tr>
+<td>Encoder feedback</td>
+<td>Encoder signal readable</td>
+<td>Accurate speed and direction feedback for control</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Central control interface</td>
+<td>Relay commands received from A1</td>
+<td>Translated A1 commands into motor speed and direction control</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Debugging support</td>
+<td>Basic LED indicators</td>
+<td>LEDs and test pads for signal and voltage probing</td>
+<td style="text-align: center;">No</td>
 </tr>
 </tbody>
 </table>
