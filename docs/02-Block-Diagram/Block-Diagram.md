@@ -7,18 +7,13 @@ tags:
 
 ## Overview
 
-This block diagram documents the architecture of the Team 201 B1 propulsion subsystem and how it interfaces with the team control subsystem. It highlights the major functional blocks, power rails, and signal connections used to drive two DC motors with encoder feedback.
+This block diagram illustrates the architecture of the Team 201 B1 propulsion subsystem and its interface with the overall system. The subsystem is responsible for controlling two DC motors that drive propellers, enabling forward and reverse motion as well as variable speed operation.
 
-Key items shown in the diagram:
+Power is supplied by a 9V battery through a main power switch. The battery voltage is regulated into two separate rails: a 3.3V logic rail used to power the ESP32 microcontroller and communication circuitry, and a 6V motor rail used to supply the H-bridge motor drivers and DC motors.
 
-- **Power source:** 9V battery feeding a **power switch**
-- **Power rails:** 9V is regulated into:
-  - **3.3V rail** for ESP32 logic and UART interface
-  - **6V rail** for the motor supply through the H-bridge driver
-- **Team connection:** **UART RX/TX** link between the Control Subsystem and the ESP32
-- **Actuators:** Left and Right DC motors driven through an **H-bridge**
-- **Sensors:** Left and Right **encoders** providing feedback to the ESP32 for speed control
-- **Debugging:** Debug LED, debug button, and power-on LED for bring-up and troubleshooting
+The propulsion subsystem receives motion commands from the Control Subsystem through a shared UART serial communication link (RX/TX). The ESP32 decodes these commands and generates direction and PWM control signals to the H-bridge drivers, which provide bidirectional motor control.
+
+Motor encoders are connected directly to the ESP32 to provide speed feedback, enabling monitoring and potential closed-loop speed regulation. Debugging features, including a debug button and status LEDs, are included to support system testing and troubleshooting.
 
 ## Propulsion Subsystem Block Diagram
 
