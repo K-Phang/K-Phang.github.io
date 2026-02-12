@@ -191,7 +191,7 @@ I am responsible for the motor control subsystem which receives UART serial comm
 | Ultra-low quiescent current (35µA) good for battery life | May struggle with ESP32's WiFi current bursts |
 
 **Option 3: AP2112K-3.3 (Linear Regulator, Surface Mount)**
-![AP2112K](https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/1766/MFG_AP2112K-3.3TRG1.jpg)
+![AP2112K](https://mm.digikey.com/Volume0/opasdata/d220001/derivates/1/003/210/547/31%7ESOT25%7EDA%2CHR%2CHT%2CW%7E5_sml%28200x200%29.jpg)
 * **Price**: $0.42/each
 * [Digikey Link](https://www.digikey.com/en/products/detail/diodes-incorporated/AP2112K-3-3TRG1/4505257)
 
