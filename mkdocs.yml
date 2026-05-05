@@ -56,6 +56,7 @@ draft_docs: |
   **/*_unpublished.md
   **/*_draft.md
   **/*_draft**
+  Appendix/**
 
 plugins:
   - search
@@ -80,3 +81,4 @@ extra:
     - icon: fontawesome/regular/file-code
       link: /2026_spring
       name: 2026 Site
+
