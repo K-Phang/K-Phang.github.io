@@ -21,7 +21,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://k-phang.github.io/04-BOM/BOM/</loc>
+         <loc>https://k-phang.github.io/04-Power-Budget/Power-Budget/</loc>
          <lastmod>2026-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -31,12 +31,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://k-phang.github.io/06-PCB/pcb/</loc>
+         <loc>https://k-phang.github.io/06-BOM/BOM/</loc>
          <lastmod>2026-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://k-phang.github.io/07-Reflection/Reflection/</loc>
+         <loc>https://k-phang.github.io/07-PCB/PCB/</loc>
+         <lastmod>2026-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://k-phang.github.io/08-API/API/</loc>
+         <lastmod>2026-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://k-phang.github.io/09-Hardware-V2.0/Hardware-V2.0/</loc>
+         <lastmod>2026-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://k-phang.github.io/10-Resources/Resources/</loc>
+         <lastmod>2026-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://k-phang.github.io/11-Reflection/Reflection/</loc>
          <lastmod>2026-05-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
