@@ -682,45 +682,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#b1-propulsion-message-role" class="md-nav__link">
+  <a href="#formal-team-message-format" class="md-nav__link">
     <span class="md-ellipsis">
-      B1 Propulsion Message Role
+      Formal Team Message Format
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#intended-message-format" class="md-nav__link">
+  <a href="#formal-propulsion-command" class="md-nav__link">
     <span class="md-ellipsis">
-      Intended Message Format
+      Formal Propulsion Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formal Propulsion Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-type-b-set-throttle-percentage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type B - Set Throttle Percentage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throttle-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Throttle Interpretation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#command-table" class="md-nav__link">
+  <a href="#final-local-test-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Table
+      Final Local Test Commands
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-format" class="md-nav__link">
+  <a href="#team-message-type-reference" class="md-nav__link">
     <span class="md-ellipsis">
-      Response Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      Response Table
+      Team Message Type Reference
     </span>
   </a>
   
@@ -757,15 +772,6 @@
   <a href="#future-api-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       Future API Improvements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-message-sequence" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Message Sequence
     </span>
   </a>
   
@@ -884,45 +890,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#b1-propulsion-message-role" class="md-nav__link">
+  <a href="#formal-team-message-format" class="md-nav__link">
     <span class="md-ellipsis">
-      B1 Propulsion Message Role
+      Formal Team Message Format
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#intended-message-format" class="md-nav__link">
+  <a href="#formal-propulsion-command" class="md-nav__link">
     <span class="md-ellipsis">
-      Intended Message Format
+      Formal Propulsion Command
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formal Propulsion Command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#message-type-b-set-throttle-percentage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type B - Set Throttle Percentage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#throttle-interpretation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Throttle Interpretation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#command-table" class="md-nav__link">
+  <a href="#final-local-test-commands" class="md-nav__link">
     <span class="md-ellipsis">
-      Command Table
+      Final Local Test Commands
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#response-format" class="md-nav__link">
+  <a href="#team-message-type-reference" class="md-nav__link">
     <span class="md-ellipsis">
-      Response Format
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#response-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      Response Table
+      Team Message Type Reference
     </span>
   </a>
   
@@ -959,15 +980,6 @@
   <a href="#future-api-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       Future API Improvements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-message-sequence" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example Message Sequence
     </span>
   </a>
   
@@ -1016,17 +1028,17 @@
 <td>B1 Propulsion</td>
 </tr>
 <tr>
-<td>Team Message ID</td>
+<td>Team Message ID / Receiver ID</td>
 <td>D</td>
 </tr>
 <tr>
 <td>Function</td>
-<td>Motor control for propulsion</td>
+<td>Propulsion throttle and motor direction control</td>
 </tr>
 </tbody>
 </table>
-<p>The purpose of the B1 propulsion API was to allow the team communication system to send motor-control commands to the propulsion module. The propulsion module would interpret those commands and use the ESP32 to control the H-bridge motor driver.</p>
-<p>The final hardware did not become a fully standalone integrated communication module because of the failed 3.3 V rail and missing ESP32 programming-header support. However, the API below documents the intended command structure and the role of the B1 propulsion module within the team system.</p>
+<p>The final team communication design used single-character IDs and message types. My propulsion module was receiver <strong>D</strong>. The formal team-level command for propulsion was <strong>Message Type B: Set Throttle Percentage</strong>.</p>
+<p>During final testing, the propulsion module also used a simplified local test command structure where <strong>F</strong> meant forward and <strong>B</strong> meant back. That local shorthand was useful for direct testing, but it should not replace the team-wide API because the team message table already uses <strong>F</strong> for distance data.</p>
 <h2 id="team-module-id-map">Team Module ID Map</h2>
 <table>
 <thead>
@@ -1089,265 +1101,329 @@
 </tr>
 </tbody>
 </table>
-<h2 id="b1-propulsion-message-role">B1 Propulsion Message Role</h2>
-<p>The B1 propulsion module was responsible for receiving commands addressed to message ID <strong>D</strong>. These commands controlled propulsion motor behavior.</p>
-<p>The main command types for B1 Propulsion were:</p>
-<ol>
-<li>Stop motor output.</li>
-<li>Drive forward.</li>
-<li>Drive reverse.</li>
-<li>Set motor speed using PWM.</li>
-<li>Report basic status if requested.</li>
-</ol>
-<p>The final implementation should be treated as <strong>open-loop motor control</strong> because the final motors did not include built-in encoders and encoder feedback was not completed.</p>
-<h2 id="intended-message-format">Intended Message Format</h2>
-<p><code>&lt;START&gt;&lt;TARGET_ID&gt;&lt;COMMAND&gt;&lt;VALUE&gt;&lt;END&gt;</code></p>
+<h2 id="formal-team-message-format">Formal Team Message Format</h2>
+<p>The formal team UART message structure used sender ID, receiver ID, message type, and optional data. For my subsystem, the important formal command was the throttle command sent to receiver <strong>D</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte</th>
+<th>Variable Name</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Sender_ID</td>
+<td>char</td>
+<td>Module sending the message</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Receiver_ID</td>
+<td>char</td>
+<td>Module receiving the message</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Message_Type</td>
+<td>char</td>
+<td>Command type</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Value</td>
+<td>uint8_t</td>
+<td>Optional command value, such as throttle percentage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="formal-propulsion-command">Formal Propulsion Command</h2>
+<h3 id="message-type-b-set-throttle-percentage">Message Type B - Set Throttle Percentage</h3>
 <table>
 <thead>
 <tr>
 <th>Field</th>
-<th>Description</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sender</td>
+<td>A</td>
+</tr>
+<tr>
+<td>Receiver</td>
+<td>D</td>
+</tr>
+<tr>
+<td>Message Type</td>
+<td>B</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>Throttle percentage</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Byte</th>
+<th>Variable Name</th>
+<th>Type</th>
 <th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>START</td>
-<td>Start character indicating the beginning of a message</td>
-<td><code>&lt;</code></td>
+<td style="text-align: right;">1</td>
+<td>Sender_ID</td>
+<td>char</td>
+<td>A</td>
 </tr>
 <tr>
-<td>TARGET_ID</td>
-<td>Target subsystem ID</td>
-<td><code>D</code></td>
+<td style="text-align: right;">2</td>
+<td>Receiver_ID</td>
+<td>char</td>
+<td>D</td>
 </tr>
 <tr>
-<td>COMMAND</td>
-<td>Command character or command code</td>
-<td><code>F</code>, <code>R</code>, <code>S</code>, <code>P</code>, <code>Q</code></td>
+<td style="text-align: right;">3</td>
+<td>Message_Type</td>
+<td>char</td>
+<td>B</td>
 </tr>
 <tr>
-<td>VALUE</td>
-<td>Optional command value, usually speed percentage or PWM level</td>
-<td><code>000</code> to <code>100</code></td>
-</tr>
-<tr>
-<td>END</td>
-<td>End character indicating the end of a message</td>
-<td><code>&gt;</code></td>
+<td style="text-align: right;">4</td>
+<td>Throttle</td>
+<td>uint8_t</td>
+<td>125</td>
 </tr>
 </tbody>
 </table>
-<p>Example message:</p>
-<p><code>&lt;D:F:075&gt;</code></p>
-<p>This means:</p>
+<p>Example formal message:</p>
 <table>
 <thead>
 <tr>
-<th>Message Part</th>
+<th>Sender_ID</th>
+<th>Receiver_ID</th>
+<th>Message_Type</th>
+<th style="text-align: right;">Throttle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>D</td>
+<td>B</td>
+<td style="text-align: right;">125</td>
+</tr>
+</tbody>
+</table>
+<p>This means the controller subsystem is sending a throttle command to B1 Propulsion.</p>
+<h2 id="throttle-interpretation">Throttle Interpretation</h2>
+<p>The team documentation described the throttle command as a percentage command that could be used for forward or reverse thrust. In final testing, the actual motor-control behavior was simplified into forward and back commands.</p>
+<p>The clean interpretation for this report is:</p>
+<table>
+<thead>
+<tr>
+<th>Throttle / Command Case</th>
+<th>Intended Motor Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive throttle command</td>
+<td>Forward motor direction</td>
+</tr>
+<tr>
+<td>Zero throttle command</td>
+<td>Stop motor output</td>
+</tr>
+<tr>
+<td>Negative throttle command, if supported by parser</td>
+<td>Backward/reverse motor direction</td>
+</tr>
+<tr>
+<td>Local test command <code>F</code></td>
+<td>Forward motor test</td>
+</tr>
+<tr>
+<td>Local test command <code>B</code></td>
+<td>Backward motor test</td>
+</tr>
+</tbody>
+</table>
+<p>Because the formal team message used an unsigned byte in some tables, the safest final documentation is that <strong>Message Type B controls throttle</strong>, while <strong>F/B were local test commands used during final motor testing</strong>.</p>
+<h2 id="final-local-test-commands">Final Local Test Commands</h2>
+<p>During final bring-up and motor testing, I used simplified command letters to test motion direction directly.</p>
+<table>
+<thead>
+<tr>
+<th>Local Test Command</th>
 <th>Meaning</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>D</code></td>
-<td>Message is for B1 Propulsion</td>
-</tr>
-<tr>
-<td><code>F</code></td>
-<td>Forward command</td>
-</tr>
-<tr>
-<td><code>075</code></td>
-<td>Run at 75 percent speed</td>
-</tr>
-</tbody>
-</table>
-<h2 id="command-table">Command Table</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Example Message</th>
-<th>Intended Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Stop</td>
-<td><code>&lt;D:S:000&gt;</code></td>
-<td>Disable motor output and stop propulsion</td>
-</tr>
-<tr>
+<td>F</td>
 <td>Forward</td>
-<td><code>&lt;D:F:050&gt;</code></td>
-<td>Drive the motor output forward at 50 percent speed</td>
+<td>Used in final local test run</td>
 </tr>
 <tr>
-<td>Reverse</td>
-<td><code>&lt;D:R:050&gt;</code></td>
-<td>Drive the motor output reverse at 50 percent speed</td>
+<td>B</td>
+<td>Back / Reverse</td>
+<td>Used in final local test run</td>
 </tr>
 <tr>
-<td>PWM / Speed Set</td>
-<td><code>&lt;D:P:075&gt;</code></td>
-<td>Set motor PWM duty cycle to 75 percent</td>
-</tr>
-<tr>
-<td>Query Status</td>
-<td><code>&lt;D:Q:000&gt;</code></td>
-<td>Request basic propulsion-module status</td>
+<td>Stop / 0</td>
+<td>Stop motor output</td>
+<td>Safe default behavior</td>
 </tr>
 </tbody>
 </table>
-<h2 id="response-format">Response Format</h2>
-<p><code>&lt;START&gt;&lt;SOURCE_ID&gt;&lt;STATUS&gt;&lt;VALUE&gt;&lt;END&gt;</code></p>
-<p>Example response:</p>
-<p><code>&lt;D:OK:075&gt;</code></p>
-<p>This response means that B1 Propulsion accepted the command and is operating at the requested output value.</p>
-<h2 id="response-table">Response Table</h2>
+<p>These local commands were useful for quickly proving motor direction behavior, but they should not be treated as the team-wide message types. The team-wide meaning of <strong>F</strong> was already assigned to distance data, so using <strong>F</strong> as a formal propulsion message would create a protocol conflict.</p>
+<h2 id="team-message-type-reference">Team Message Type Reference</h2>
 <table>
 <thead>
 <tr>
-<th>Response</th>
-<th>Example Message</th>
-<th>Meaning</th>
+<th>Message Type</th>
+<th>Team Meaning</th>
+<th>Related Subsystem</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>OK</td>
-<td><code>&lt;D:OK:075&gt;</code></td>
-<td>Command accepted</td>
+<td>A</td>
+<td>Set Steering Angle</td>
+<td>B2 Steering</td>
 </tr>
 <tr>
-<td>ERR</td>
-<td><code>&lt;D:ERR:000&gt;</code></td>
-<td>Command rejected or invalid</td>
+<td>B</td>
+<td>Set Throttle Percentage</td>
+<td>B1 Propulsion</td>
 </tr>
 <tr>
-<td>STOP</td>
-<td><code>&lt;D:STOP:000&gt;</code></td>
-<td>Motor output stopped</td>
+<td>C</td>
+<td>Set Camera Angle</td>
+<td>C2 Camera Arm</td>
 </tr>
 <tr>
-<td>BUSY</td>
-<td><code>&lt;D:BUSY:000&gt;</code></td>
-<td>Module is active or unavailable</td>
+<td>D</td>
+<td>Take Photo</td>
+<td>C1 Camera</td>
 </tr>
 <tr>
-<td>FAIL</td>
-<td><code>&lt;D:FAIL:000&gt;</code></td>
-<td>Hardware or command failure detected</td>
+<td>E</td>
+<td>Send Speed Data</td>
+<td>C3 / sensor path</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Send Distance Data</td>
+<td>D2 Distance Sensor</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Send Temperature Data</td>
+<td>D1 Temperature Sensor</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Stabilize Arm</td>
+<td>C3 to C2</td>
+</tr>
+<tr>
+<td>J / L</td>
+<td>Rollcall, depending on document version</td>
+<td>Team debugging</td>
 </tr>
 </tbody>
 </table>
+<p>The important point for B1 Propulsion is that <strong>B is the formal throttle command</strong> and <strong>D is the receiver ID for my board</strong>.</p>
 <h2 id="motor-control-behavior">Motor-Control Behavior</h2>
-<p>The ESP32 was intended to translate valid API messages into H-bridge control signals.</p>
+<p>The ESP32 was intended to translate valid propulsion commands into H-bridge control signals.</p>
 <table>
 <thead>
 <tr>
-<th>API Command</th>
-<th>H-Bridge Direction Behavior</th>
-<th>PWM Behavior</th>
+<th>Command Source</th>
+<th>Command</th>
+<th>H-Bridge Behavior</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Stop</td>
-<td>Both motor-control outputs disabled or set to safe stop state</td>
-<td>0 percent duty cycle</td>
+<td>Formal team API</td>
+<td>A D B with throttle value</td>
+<td>Set motor output based on throttle value</td>
 </tr>
 <tr>
-<td>Forward</td>
-<td>Direction pins set for forward polarity</td>
-<td>PWM set by command value</td>
+<td>Local test API</td>
+<td>F</td>
+<td>Set direction forward and drive motor</td>
 </tr>
 <tr>
-<td>Reverse</td>
-<td>Direction pins set for reverse polarity</td>
-<td>PWM set by command value</td>
+<td>Local test API</td>
+<td>B</td>
+<td>Set direction backward and drive motor</td>
 </tr>
 <tr>
-<td>PWM / Speed Set</td>
-<td>Direction remains from previous valid direction command</td>
-<td>PWM updated to command value</td>
+<td>Local test API</td>
+<td>Stop / 0</td>
+<td>Disable motor output</td>
 </tr>
 </tbody>
 </table>
-<p>For safety, any invalid command should default to a stopped or disabled motor-output state. Motor-control messages should not cause movement unless the target ID is <strong>D</strong> and the command is valid.</p>
+<p>For safety, invalid messages should not drive the motors. The safest default state is motor output disabled.</p>
 <h2 id="error-handling">Error Handling</h2>
-<p>The propulsion API should reject invalid messages under these conditions:</p>
+<p>The propulsion API should reject or ignore invalid messages under these conditions:</p>
 <ol>
-<li>The target ID is not <code>D</code>.</li>
-<li>The command field is missing or unsupported.</li>
-<li>The value field is outside the valid range.</li>
-<li>The message does not include the required start/end structure.</li>
-<li>The motor driver is disabled or unavailable.</li>
+<li>The receiver ID is not <code>D</code>.</li>
+<li>The message type is unsupported.</li>
+<li>The throttle value is outside the expected range.</li>
+<li>The message is malformed or incomplete.</li>
+<li>The motor driver is unavailable.</li>
 <li>The module has not completed startup.</li>
+<li>The command conflicts with the team-wide message table.</li>
 </ol>
-<p>Invalid messages should not drive the motors. The safest default state is motor output disabled.</p>
+<p>Invalid messages should not cause motor movement.</p>
 <h2 id="final-implementation-notes">Final Implementation Notes</h2>
-<p>The final B1 propulsion hardware did not fully validate the complete API on the standalone PCB. The main reasons were:</p>
+<p>The final B1 propulsion hardware did not fully validate the complete team API on the standalone PCB. The main reasons were:</p>
 <ol>
 <li>The onboard 3.3 V rail did not work.</li>
 <li>The ESP32-S3-WROOM-1-N4 was soldered onto the PCB, but the board was missing proper programming-header support.</li>
 <li>The final motors were basic TT DC gearbox motors without built-in encoders.</li>
 <li>Encoder feedback was not implemented in the final system.</li>
 </ol>
-<p>Because of those limitations, this API should be understood as the final intended interface for the B1 propulsion module rather than a fully validated standalone communication implementation.</p>
+<p>The final run used simple local direction commands, with <strong>F for forward</strong> and <strong>B for back</strong>, to test motor behavior. The formal report should still keep the team-wide API aligned with the team protocol: <strong>receiver D, message type B, throttle command</strong>.</p>
 <h2 id="future-api-improvements">Future API Improvements</h2>
-<p>A future version of the B1 propulsion API should include:</p>
-<ol>
-<li>A startup self-test message.</li>
-<li>A rail-status message showing whether 3.3 V and 6 V are present.</li>
-<li>A motor-driver fault message if the H-bridge enters a fault state.</li>
-<li>A clear stop or emergency-stop command.</li>
-<li>Optional encoder fields if future motors include feedback.</li>
-<li>Better integration between the team message structure and firmware-level parsing.</li>
-</ol>
-<h2 id="example-message-sequence">Example Message Sequence</h2>
+<p>A future version of the B1 propulsion API should define throttle direction more cleanly. The team should choose one of these options:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: right;">Step</th>
-<th>Message</th>
+<th>Option</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">1</td>
-<td><code>&lt;D:Q:000&gt;</code></td>
-<td>Control system asks B1 Propulsion for status</td>
+<td>Signed throttle</td>
+<td>One value supports forward, stop, and reverse</td>
 </tr>
 <tr>
-<td style="text-align: right;">2</td>
-<td><code>&lt;D:OK:000&gt;</code></td>
-<td>B1 Propulsion responds that it is ready</td>
+<td>Direction + speed</td>
+<td>One byte for direction and one byte for speed</td>
 </tr>
 <tr>
-<td style="text-align: right;">3</td>
-<td><code>&lt;D:F:050&gt;</code></td>
-<td>Control system commands forward motion at 50 percent speed</td>
-</tr>
-<tr>
-<td style="text-align: right;">4</td>
-<td><code>&lt;D:OK:050&gt;</code></td>
-<td>B1 Propulsion confirms the command</td>
-</tr>
-<tr>
-<td style="text-align: right;">5</td>
-<td><code>&lt;D:S:000&gt;</code></td>
-<td>Control system commands propulsion stop</td>
-</tr>
-<tr>
-<td style="text-align: right;">6</td>
-<td><code>&lt;D:STOP:000&gt;</code></td>
-<td>B1 Propulsion confirms motor output stopped</td>
+<td>Separate message types</td>
+<td>Separate formal commands for forward, reverse, and stop</td>
 </tr>
 </tbody>
 </table>
+<p>The cleanest future design would be <strong>direction + speed</strong>, because it avoids confusion between team-wide message letters and local motor-test letters.</p>
 
 
 
