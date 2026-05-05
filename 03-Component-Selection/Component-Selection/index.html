@@ -1138,7 +1138,7 @@
 <h2 id="k-phang-b1-propulsion-subsystem">K Phang - B1 Propulsion Subsystem</h2>
 <p>I was responsible for the <strong>B1 Propulsion subsystem</strong> for Team 201's rover project, <strong>The Duck</strong>. My subsystem was assigned to <strong>K Phang, B1 Propulsion, message ID D</strong>.</p>
 <p>The propulsion subsystem was intended to receive commands from the team communication system and translate those commands into motor direction and speed control. The final design used an ESP32-based controller, a motor-driver stage, a 6 V motor rail, and a planned 3.3 V logic rail.</p>
-<p>The original design also included encoder feedback as a stretch goal. Encoder feedback was not used in the final implementation, so the final propulsion module should be treated as an <strong>open-loop motor-control subsystem</strong>.</p>
+<p>The original design also considered motors with encoder feedback as a stretch goal. The final purchased and used motors were basic TT DC gearbox motors without built-in encoders, so encoder feedback was not used in the final implementation. The final propulsion module should therefore be treated as an <strong>open-loop motor-control subsystem</strong>.</p>
 <h2 id="final-major-component-summary">Final Major Component Summary</h2>
 <table>
 <thead>

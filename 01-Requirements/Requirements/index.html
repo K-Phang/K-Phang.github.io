@@ -836,7 +836,7 @@
 
 <h1 id="module-requirements">Module Requirements</h1>
 <p>This page defines the requirements for my individual module: <strong>K Phang, B1 Propulsion, message ID D</strong>, for Team 201's rover project, <strong>The Duck</strong>.</p>
-<p>The B1 propulsion module was responsible for controlling the drive motors used to move The Duck. The original goal was to create an ESP32-based motor-control board that could receive team communication commands, drive the propulsion motors through an H-bridge, and eventually support encoder feedback for closed-loop speed control. During final implementation, the module was reduced to basic open-loop motor control because encoder feedback remained a stretch goal and the PCB had bring-up issues.</p>
+<p>The B1 propulsion module was responsible for controlling the drive motors used to move The Duck. The original goal was to create an ESP32-based motor-control board that could receive team communication commands, drive the propulsion motors through an H-bridge, and eventually support encoder feedback for closed-loop speed control. The original propulsion plan considered motors with encoder feedback, but the final purchased and used motors were basic TT DC gearbox motors without built-in encoders. During final implementation, the module was reduced to basic open-loop motor control because encoder feedback was no longer part of the final motor hardware and the PCB had bring-up issues.</p>
 <h2 id="final-module-scope">Final Module Scope</h2>
 <p>The final B1 propulsion implementation focused on these core functions:</p>
 <ol>
