@@ -484,6 +484,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -512,6 +514,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -520,9 +524,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#module-requirements" class="md-nav__link">
+  <a href="#final-module-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Module Requirements
+      Final Module Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirement-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirement Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-requirement-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Requirement Review
     </span>
   </a>
   
@@ -753,6 +775,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -761,9 +785,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#module-requirements" class="md-nav__link">
+  <a href="#final-module-scope" class="md-nav__link">
     <span class="md-ellipsis">
-      Module Requirements
+      Final Module Scope
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirement-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirement Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-requirement-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Requirement Review
     </span>
   </a>
   
@@ -792,96 +834,129 @@
   
 
 
-  <h1>Requirements</h1>
-
-<h2 id="module-requirements">Module Requirements</h2>
-<p>The following table outlines the functional and design constraints for the propulsion module.<br>
-This subsystem is responsible for controlling a DC motor-driven propeller capable of forward and reverse motion with variable speed control. The module integrates power regulation, communication, motor driving, and feedback from an incremental encoder to support closed-loop motor operation within the overall team system.</p>
-<p>The table includes minimum threshold values for basic operation, target performance levels for optimal system behavior, and identifies stretch requirements that extend beyond baseline functionality.</p>
+<h1 id="module-requirements">Module Requirements</h1>
+<p>This page defines the requirements for my individual module: <strong>K Phang, B1 Propulsion, message ID D</strong>, for Team 201's rover project, <strong>The Duck</strong>.</p>
+<p>The B1 propulsion module was responsible for controlling the drive motors used to move The Duck. The original goal was to create an ESP32-based motor-control board that could receive team communication commands, drive the propulsion motors through an H-bridge, and eventually support encoder feedback for closed-loop speed control. During final implementation, the module was reduced to basic open-loop motor control because encoder feedback remained a stretch goal and the PCB had bring-up issues.</p>
+<h2 id="final-module-scope">Final Module Scope</h2>
+<p>The final B1 propulsion implementation focused on these core functions:</p>
+<ol>
+<li>Receive or support propulsion-control commands as part of the team communication structure.</li>
+<li>Use an ESP32-based controller for motor-control logic.</li>
+<li>Drive the propulsion motors using an H-bridge motor driver.</li>
+<li>Provide a working 6 V motor rail for the motors.</li>
+<li>Support forward and reverse motor control through the H-bridge design.</li>
+<li>Document PCB bring-up issues and identify hardware changes for a future revision.</li>
+</ol>
+<p>The final board included the soldered <strong>ESP32-S3-WROOM-1-N4</strong> module, but the ESP32 was tested using a breadboard/devkit setup because the PCB was missing the correct programming-header support and the onboard 3.3 V rail did not function correctly. The 6 V rail did work and was used for the motor side of the circuit.</p>
+<h2 id="requirement-table">Requirement Table</h2>
 <table>
 <thead>
 <tr>
-<th><strong>Requirement Description</strong></th>
-<th><strong>Measure of<br>Threshold</strong></th>
-<th><strong>Target<br>Measure</strong></th>
-<th style="text-align: center;"><strong>Stretch<br>Requirement<br>(Y-N)</strong></th>
+<th>Requirement Description</th>
+<th>Threshold Measure</th>
+<th>Target Measure</th>
+<th>Final Status</th>
+<th style="text-align: center;">Stretch Requirement</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Surface mounted 3.3V switching power regulator</td>
-<td>3.2 V output</td>
-<td>3.3 V regulated output</td>
+<td>Surface-mounted 3.3 V regulator</td>
+<td>Produce a usable 3.3 V logic rail</td>
+<td>Stable 3.3 V rail for ESP32 and H-bridge logic</td>
+<td><strong>Not met.</strong> The 3.3 V rail did not work because of a routing/layout issue involving the regulator inductor path.</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Surface mounted microcontroller</td>
-<td>ESP32</td>
-<td>ESP32 handling control, UART, and encoder processing</td>
+<td>Surface-mounted microcontroller</td>
+<td>ESP32 included in the schematic and PCB</td>
+<td>ESP32-S3-WROOM-1-N4 soldered to final PCB and able to run motor-control code</td>
+<td><strong>Partially met.</strong> The ESP32-S3-WROOM-1-N4 was soldered to the PCB, but programming and power issues prevented full onboard use.</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>UART bus communication</td>
-<td>Able to receive motor commands from A1</td>
-<td>Reliable bidirectional UART communication with A1</td>
+<td>External ESP32/devkit fallback</td>
+<td>Use a breadboard/devkit if onboard MCU bring-up fails</td>
+<td>Validate motor-control behavior with an external ESP32 setup</td>
+<td><strong>Met.</strong> The ESP32 was tested through a breadboard/devkit setup.</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Power sharing</td>
-<td>Able to receive power from terminal or pin header</td>
-<td>Powered through shared system bus</td>
-<td style="text-align: center;">Yes</td>
+<td>UART communication support</td>
+<td>Define module ID and expected command behavior</td>
+<td>Match Team 201 communication structure with B1 mapped to message ID D</td>
+<td><strong>Partially met.</strong> The module identity was defined, but final integrated communication testing was limited by hardware bring-up issues.</td>
+<td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Motor type</td>
-<td>DC motor without feedback</td>
-<td>DC gearmotor with incremental encoder</td>
+<td>Motor power rail</td>
+<td>Provide a working motor-voltage rail</td>
+<td>Use a stable 6 V rail to power the propulsion motors</td>
+<td><strong>Met.</strong> The 6 V rail worked and was used for the motors.</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Motor driver interface</td>
-<td>Basic motor on/off control</td>
-<td>H-bridge motor driver enabling bidirectional PWM control</td>
+<td>Connect ESP32 control signals to an H-bridge</td>
+<td>Use an H-bridge motor driver for bidirectional motor control</td>
+<td><strong>Partially met.</strong> The H-bridge was included, but final full-system testing was limited.</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>Motor channel count</td>
+<td>Control at least one motor channel</td>
+<td>Use one H-bridge channel to drive the propulsion motor pair</td>
+<td><strong>Met.</strong> The final board used one H-bridge channel to power two motors.</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Forward motor control</td>
-<td>Motor rotates forward</td>
-<td>Smooth forward propulsion under load</td>
+<td>Motor can rotate forward</td>
+<td>Smooth forward propulsion under command</td>
+<td><strong>Partially met.</strong> The circuit supported forward control, but complete integrated validation was limited.</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
 <td>Reverse motor control</td>
-<td>Motor rotates backward</td>
-<td>Smooth reverse propulsion under load</td>
+<td>Motor can rotate backward</td>
+<td>Smooth reverse propulsion under command</td>
+<td><strong>Partially met.</strong> The H-bridge design supported reverse control, but complete integrated validation was limited.</td>
 <td style="text-align: center;">No</td>
 </tr>
 <tr>
-<td>Motor speed control</td>
-<td>Limited discrete speed levels</td>
-<td>Continuous PWM-based speed control</td>
+<td>PWM speed control</td>
+<td>Basic speed control using PWM</td>
+<td>Adjustable open-loop speed control from ESP32 PWM output</td>
+<td><strong>Partially met.</strong> PWM control was part of the design and breadboard testing path, but not fully validated on the final PCB.</td>
 <td style="text-align: center;">Yes</td>
 </tr>
 <tr>
 <td>Encoder feedback</td>
-<td>Encoder signal readable</td>
-<td>Accurate speed and direction feedback for control</td>
-<td style="text-align: center;">No</td>
-</tr>
-<tr>
-<td>Central control interface</td>
-<td>Relay commands received from A1</td>
-<td>Translated A1 commands into motor speed and direction control</td>
-<td style="text-align: center;">No</td>
+<td>Include possible encoder input path</td>
+<td>Read motor encoder feedback for speed and direction measurement</td>
+<td><strong>Not met.</strong> Encoder feedback was treated as a stretch goal and was not used in the final implementation.</td>
+<td style="text-align: center;">Yes</td>
 </tr>
 <tr>
 <td>Debugging support</td>
-<td>Basic LED indicators</td>
-<td>LEDs and test pads for signal and voltage probing</td>
+<td>Allow basic voltage and signal probing</td>
+<td>Include clear programming access, test points, and debugging indicators</td>
+<td><strong>Not met.</strong> The missing programming header made bring-up harder, and future revisions need better debug access.</td>
+<td style="text-align: center;">No</td>
+</tr>
+<tr>
+<td>PCB implementation</td>
+<td>Create a manufactured PCB for the subsystem</td>
+<td>Solder and test the final propulsion board</td>
+<td><strong>Partially met.</strong> The PCB was manufactured and soldered, but the 3.3 V rail and programming-header issues prevented full standalone operation.</td>
 <td style="text-align: center;">No</td>
 </tr>
 </tbody>
 </table>
+<h2 id="final-requirement-review">Final Requirement Review</h2>
+<p>The most successful part of the module was the <strong>motor-power side</strong>. The 6 V rail worked and could be used to power the motors. The final board also included the correct general architecture for a propulsion module: ESP32 controller, motor-driver circuit, motor rail, and support for team communication.</p>
+<p>The weakest part of the module was <strong>board bring-up and debugging</strong>. The missing programming header made the soldered ESP32 difficult to program directly, and the failed 3.3 V regulator rail prevented the board from operating as a fully standalone controller. Because of this, the final test setup required an external ESP32 breadboard/devkit instead of relying only on the PCB.</p>
+<p>The encoder requirement was not completed. It should be treated as a future improvement rather than a final working feature. For the final version of this report, the propulsion subsystem should be described as an <strong>open-loop motor-control module</strong>, not a closed-loop encoder-controlled module.</p>
 
 
 
