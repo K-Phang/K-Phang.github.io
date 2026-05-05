@@ -1,7 +1,8 @@
-site_name: EGR 314 K Phang Data Sheet 
+site_name: EGR 314 K Phang Data Sheet
 site_url: https://k-phang.github.io/
 repo_url: https://github.com/K-Phang/K-Phang.github.io
 edit_uri: edit/main/docs/
+
 theme:
   name: material
   custom_dir: custom_theme/
@@ -9,14 +10,14 @@ theme:
     primary: blue
     accent: indigo
   font:
-    text: Comic Sans
+    text: Roboto
   logo: static/logo314.svg
   favicon: static/logo314.png
 
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - toc.follow    
+    - toc.follow
     - navigation.top
     - navigation.path
     - navigation.indexes
@@ -25,11 +26,25 @@ theme:
     - navigation.footer
 #    - navigation.sections
 #    - navigation.expand
-#    - navigation.instant # doesn't work that well
+#    - navigation.instant
+
+nav:
+  - Home: index.md
+  - Requirements: 01-Requirements/Requirements.md
+  - Block Diagram: 02-Block-Diagram/Block-Diagram.md
+  - Component Selection: 03-Component-Selection/Component-Selection.md
+  - Power Budget: 04-Power-Budget/Power-Budget.md
+  - Schematic: 05-Schematic/Schematic.md
+  - BOM: 06-BOM/BOM.md
+  - PCB: 07-PCB/PCB.md
+  - API: 08-API/API.md
+  - Hardware V2.0: 09-Hardware-V2.0/Hardware-V2.0.md
+  - Resources: 10-Resources/Resources.md
+  - Reflection: 11-Reflection/Reflection.md
 
 markdown_extensions:
-  - attr_list #add attributes using curly brackets to images, see https://squidfunk.github.io/mkdocs-material/reference/images/
-  - md_in_html # see https://squidfunk.github.io/mkdocs-material/reference/images/
+  - attr_list
+  - md_in_html
   - footnotes
   - pymdownx.arithmatex:
       generic: true
@@ -44,26 +59,27 @@ draft_docs: |
   **/*_unpublished.md
   **/*_draft.md
   **/*_draft**
-  
+
 plugins:
   - search
-  - glightbox # allow resize images, see https://squidfunk.github.io/mkdocs-material/reference/images/
+  - glightbox
 
 extra_css:
-  - stylesheets/extra.css  
+  - stylesheets/extra.css
 
 extra_javascript:
- - javascripts/mathjax.js
- - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 not_in_nav: |
   static
-  
-copyright: "Copyright &copy; 2026 team-name-here"
+  Appendix
+
+copyright: "Copyright &copy; 2026 K Phang"
 
 extra:
   generator: false
   social:
     - icon: fontawesome/regular/file-code
       link: /2026_spring
-      name: 2023 Site    
+      name: 2026 Site
