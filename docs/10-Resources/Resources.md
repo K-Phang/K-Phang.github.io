@@ -58,3 +58,4 @@ No custom CAD or 3D-printed mechanical part file was required for my individual 
 The most important resources for grading are the schematic PDF, ECAD project ZIP, BOM files, PCB images, and Gerber/JLCPCB fabrication ZIP. These files document the final state of the B1 propulsion hardware and allow the design to be reviewed beyond the rendered website pages.
 
 The current resource set supports the final report because it includes both human-readable documentation files and source/fabrication files. The remaining optional improvement would be adding a final ESP32 code project ZIP if a complete code project is available.
+
