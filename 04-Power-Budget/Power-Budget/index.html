@@ -89,6 +89,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#power-budget" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -539,6 +544,19 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Power Budget
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -549,6 +567,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-budget-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Budget Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-power-budget-was-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the Power Budget Was Used
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-power-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Power Conclusions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -711,6 +793,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-budget-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power Budget Images
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-the-power-budget-was-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      How the Power Budget Was Used
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-power-conclusions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Power Conclusions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -733,7 +870,34 @@
   
 
 
-  <h1>Power Budget</h1>
+<h1 id="power-budget">Power Budget</h1>
+<h2 id="overview">Overview</h2>
+<p>The power budget was created to estimate the electrical requirements of the <strong>B1 Propulsion subsystem</strong> for Team 201's project, <strong>The Duck</strong>. The purpose of the power budget was to check whether the selected regulators and power rails could support the ESP32 controller, motor-driver logic, and motor loads.</p>
+<p>The propulsion board was designed around two main regulated rails:</p>
+<ol>
+<li><strong>3.3 V logic rail</strong> for the ESP32-S3-WROOM-1-N4 and low-voltage logic-side circuitry.</li>
+<li><strong>6 V motor rail</strong> for the propulsion motors and motor-driver power stage.</li>
+</ol>
+<p>The original design intent was for the PCB to operate as a standalone board, where the input power would be regulated down to both logic and motor voltages. During final testing, the <strong>6 V rail worked</strong>, but the <strong>3.3 V rail did not work</strong> because of a routing/layout problem around the regulator and inductor path. Because of that issue, the ESP32 was powered and tested using a breadboard/devkit setup instead of relying on the failed onboard 3.3 V rail.</p>
+<h2 id="power-budget-images">Power Budget Images</h2>
+<p>The following images show the power-budget spreadsheet used for the propulsion subsystem.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg1.png" data-desc-position="bottom"><img alt="Power budget page 1" src="../budgetPg1.png" width="700"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg2.png" data-desc-position="bottom"><img alt="Power budget page 2" src="../budgetPg2.png" width="700"></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../budgetPg3.png" data-desc-position="bottom"><img alt="Power budget page 3" src="../budgetPg3.png" width="700"></a></p>
+<h2 id="how-the-power-budget-was-used">How the Power Budget Was Used</h2>
+<p>The power budget was used to compare expected current draw against the current capacity of the selected regulators. This was important because the propulsion subsystem includes both logic electronics and motors, which have very different power behavior.</p>
+<p>The ESP32 and logic-side motor-driver inputs require a stable 3.3 V supply. These loads are relatively low compared to the motors, but they are sensitive to voltage stability. If the 3.3 V rail fails, the microcontroller cannot reliably boot, program, or send motor-control signals.</p>
+<p>The motors require a separate 6 V supply because motor loads can draw much higher current, especially during startup, direction changes, or stall conditions. The 6 V rail therefore needed more current margin than the logic rail. The selected 6 V regulator provided enough margin for the final test setup, and this was confirmed by the fact that the 6 V rail worked on the final board.</p>
+<h2 id="final-power-conclusions">Final Power Conclusions</h2>
+<p>The main conclusion from the power-budget process is that the propulsion subsystem needed separate logic and motor rails. Combining the ESP32 logic power and motor power would have made the design less stable and harder to debug. The separate-rail design was the right architecture.</p>
+<p>The final test results showed that the <strong>6 V motor-power section was successful</strong>, but the <strong>3.3 V logic-power section failed because of implementation, not because the architecture was wrong</strong>. The selected 3.3 V regulator was reasonable, but the PCB layout around the regulator needed to be corrected. In a future hardware revision, the 3.3 V regulator layout should be rebuilt directly from the datasheet reference layout, with special attention to the regulator, inductor, capacitors, and ground return path.</p>
+<p>The failed 3.3 V rail also showed why test points and staged board bring-up matter. A future version should include clearly labeled test points for input voltage, 6 V, 3.3 V, ground, motor-driver logic input, and motor-driver output. This would make it much faster to isolate whether a problem is caused by the power circuit, the ESP32, the motor driver, or the load.</p>
+<h2 id="resources">Resources</h2>
+<p>The full power budget files are linked below:</p>
+<ul>
+<li><a href="../Power-Budget.pdf">Power Budget PDF</a></li>
+<li><a href="../Power-Budget.xlsx">Power Budget Excel File</a></li>
+</ul>
 
 
 
@@ -741,7 +905,8 @@
 
 
 
-
+  
+  
 
 
 
