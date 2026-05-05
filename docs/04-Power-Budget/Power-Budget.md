@@ -13,17 +13,11 @@ The propulsion board was designed around two main regulated rails:
 1. **3.3 V logic rail** for the ESP32-S3-WROOM-1-N4 and low-voltage logic-side circuitry.
 2. **6 V motor rail** for the propulsion motors and motor-driver power stage.
 
-The original design intent was for the PCB to operate as a standalone board, where the input power would be regulated down to both logic and motor voltages. During final testing, the **6 V rail worked**, but the **3.3 V rail did not work** because of a routing/layout problem around the regulator and inductor path. Because of that issue, the ESP32 was powered and tested using a breadboard/devkit setup instead of relying on the failed onboard 3.3 V rail.
+The final power budget is an estimate based on the selected major components and final implementation state. It should not be treated as measured laboratory current data. The estimate was still useful because it showed that the design needed separate logic and motor rails, and that the motor rail needed substantially more current margin than the logic rail.
 
-## Power Budget Images
+## Power Budget Image
 
-The following images show the power-budget spreadsheet used for the propulsion subsystem.
-
-![Power budget page 1](budgetPg1.png){ width="700" }
-
-![Power budget page 2](budgetPg2.png){ width="700" }
-
-![Power budget page 3](budgetPg3.png){ width="700" }
+![B1 Propulsion Power Budget](Power-Budget.png){ width="900" }
 
 ## How the Power Budget Was Used
 
@@ -32,6 +26,14 @@ The power budget was used to compare expected current draw against the current c
 The ESP32 and logic-side motor-driver inputs require a stable 3.3 V supply. These loads are relatively low compared to the motors, but they are sensitive to voltage stability. If the 3.3 V rail fails, the microcontroller cannot reliably boot, program, or send motor-control signals.
 
 The motors require a separate 6 V supply because motor loads can draw much higher current, especially during startup, direction changes, or stall conditions. The 6 V rail therefore needed more current margin than the logic rail. The selected 6 V regulator provided enough margin for the final test setup, and this was confirmed by the fact that the 6 V rail worked on the final board.
+
+## Estimated Rail Summary
+
+| Rail | Estimated Current | Available Current | Estimated Margin | Final Result |
+|---|---:|---:|---:|---|
+| 3.3 V logic rail | 0.265 A | 2.000 A | 1.735 A | Did not work on final PCB because of regulator/layout issue |
+| 6 V motor rail, normal running | 0.820 A | 10.000 A | 9.180 A | Worked and powered the motors |
+| 6 V motor rail, startup/stall estimate | 3.020 A | 10.000 A | 6.980 A | Conservative design-margin estimate |
 
 ## Final Power Conclusions
 
