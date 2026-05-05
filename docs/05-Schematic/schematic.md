@@ -42,7 +42,8 @@ For a future revision, the schematic should be updated to include a clearly defi
 
 The final schematic files are linked below:
 
-- [Schematic PDF](ExampleSchematic.pdf)
-- [Schematic / ECAD Project ZIP](dummyZip.zip)
+- [Schematic PDF](KPhang_B1_Final_Schematic.pdf)
+- [Schematic / ECAD Project ZIP](KPhang_B1_ECAD_Project.zip)
 
 > Note: These linked files should be replaced with final named files before submission if the current files are placeholders. Recommended final names are `KPhang_B1_Final_Schematic.pdf` and `KPhang_B1_ECAD_Project.zip`.
+
