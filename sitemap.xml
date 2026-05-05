@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://k-phang.github.io/10-Resources/KPhang_B1_ESP32_Code/</loc>
+         <lastmod>2026-05-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://k-phang.github.io/11-Reflection/Reflection/</loc>
          <lastmod>2026-05-05</lastmod>
          <changefreq>daily</changefreq>
