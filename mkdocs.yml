@@ -1,4 +1,4 @@
-site_name: EGR 314 K Phang Data Sheet
+﻿site_name: EGR 314 K Phang Data Sheet
 site_url: https://k-phang.github.io/
 repo_url: https://github.com/K-Phang/K-Phang.github.io
 edit_uri: edit/main/docs/
@@ -24,9 +24,6 @@ theme:
     - navigation.prune
     - content.action.edit
     - navigation.footer
-#    - navigation.sections
-#    - navigation.expand
-#    - navigation.instant
 
 nav:
   - Home: index.md
