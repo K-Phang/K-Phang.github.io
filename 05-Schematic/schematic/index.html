@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#overview" class="md-skip">
+        <a href="#module-schematic" class="md-skip">
           Skip to content
         </a>
       
@@ -702,6 +702,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -713,6 +715,33 @@
   <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-schematic-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Schematic Image
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schematic-design-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schematic Design Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-schematic-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Schematic Review
     </span>
   </a>
   
@@ -750,14 +779,38 @@
   
 
 
-  <h1>Module Schematic</h1>
-
+<h1 id="module-schematic">Module Schematic</h1>
 <h2 id="overview">Overview</h2>
-<p>This schematic is designed to support the B2 Propulsion subsystem. It integrates a 3.3V switching power regulator, an ESP32 WROOM-32 microcontroller, and a TB67H450FNG H-bridge motor driver to enable bidirectional PWM control of a DC gearmotor. Power is supplied via a 6V rail for motor drive and a regulated 3.3V rail for logic. UART communication is handled through the daisy-chain headers for upstream and downstream connectivity.</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../SchematicPropulsion.webp" data-desc-position="bottom"><img alt="schematic" height:_300_="height:&quot;300;&quot;" src="../SchematicPropulsion.webp" style="style" width:_350_="width:&quot;350&quot;"></a>
-<strong>Figure 1:</strong> B2 Propulsion Subsystem Schematic.</p>
+<p>This schematic documents the <strong>B1 Propulsion subsystem</strong> for Team 201's project, <strong>The Duck</strong>. The schematic was designed around an <strong>ESP32-S3-WROOM-1-N4</strong> microcontroller, a <strong>TB67H450FNG,EL H-bridge motor driver</strong>, a <strong>6 V motor rail</strong>, and a <strong>3.3 V logic rail</strong>.</p>
+<p>The intended function of the schematic was to allow the ESP32 to receive propulsion commands, generate PWM and direction-control signals, and drive the motors through the H-bridge. The 6 V rail was used for the motor-power side of the system, while the 3.3 V rail was intended to power the ESP32 and logic-side circuitry.</p>
+<p>In the final board bring-up, the <strong>6 V rail worked</strong>, but the <strong>3.3 V rail did not work</strong> because of a routing/layout issue around the switching regulator and inductor path. The ESP32-S3-WROOM-1-N4 was soldered onto the PCB, but because of the missing programming-header support and the failed 3.3 V rail, final testing used a breadboard/devkit ESP32 setup where needed.</p>
+<h2 id="final-schematic-image">Final Schematic Image</h2>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../SchematicPropulsion.webp" data-desc-position="bottom"><img alt="B1 Propulsion Subsystem Schematic" src="../SchematicPropulsion.webp" width="900"></a></p>
+<p><strong>Figure 1:</strong> B1 Propulsion subsystem schematic for The Duck.</p>
+<h2 id="schematic-design-description">Schematic Design Description</h2>
+<p>The schematic is divided into the following major sections:</p>
+<ol>
+<li><strong>Power input and protection:</strong> brings external power into the board and routes it to the regulator sections.</li>
+<li><strong>6 V motor rail:</strong> supplies the motor-power side of the H-bridge and was confirmed to work during final testing.</li>
+<li><strong>3.3 V logic rail:</strong> intended to power the ESP32 and logic-side motor-driver circuitry, but did not function correctly on the final PCB.</li>
+<li><strong>ESP32-S3-WROOM-1-N4:</strong> intended to act as the main propulsion controller.</li>
+<li><strong>TB67H450FNG,EL H-bridge:</strong> provides bidirectional motor-control capability.</li>
+<li><strong>UART/team communication interface:</strong> supports the team communication structure for B1 Propulsion, message ID D.</li>
+<li><strong>Motor output connector:</strong> routes the H-bridge output to the propulsion motors.</li>
+</ol>
+<h2 id="final-schematic-review">Final Schematic Review</h2>
+<p>The schematic captured the correct high-level architecture for the B1 propulsion module. The separation between the logic rail and motor rail was the correct design decision because the motors draw significantly more current than the ESP32 and logic circuitry. The H-bridge was also the correct type of driver for bidirectional DC motor control.</p>
+<p>The main issue was not the overall schematic architecture, but the final implementation and board bring-up. The failed 3.3 V rail prevented the PCB from operating as a complete standalone propulsion controller. The missing programming-header support also made the soldered ESP32 difficult to program and debug directly.</p>
+<p>For a future revision, the schematic should be updated to include a clearly defined ESP32 programming header, more test points, clearer power-rail indicators, and a corrected 3.3 V regulator implementation based directly on the regulator datasheet reference layout.</p>
 <h2 id="resources">Resources</h2>
-<p>The schematic as a PDF download is available <a href="../ExampleSchematic.pdf"><em>here</em></a>, and the Zip folder of the project <a href="../dummyZip.zip"><em>here</em></a>.</p>
+<p>The final schematic files are linked below:</p>
+<ul>
+<li><a href="../ExampleSchematic.pdf">Schematic PDF</a></li>
+<li><a href="../dummyZip.zip">Schematic / ECAD Project ZIP</a></li>
+</ul>
+<blockquote>
+<p>Note: These linked files should be replaced with final named files before submission if the current files are placeholders. Recommended final names are <code>KPhang_B1_Final_Schematic.pdf</code> and <code>KPhang_B1_ECAD_Project.zip</code>.</p>
+</blockquote>
 
 
 
