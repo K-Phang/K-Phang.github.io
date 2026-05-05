@@ -32,7 +32,7 @@ The block diagram was developed by separating the propulsion module into four ma
 
 This structure was chosen because the propulsion board needed to handle both low-voltage logic signals and higher-current motor power. Keeping these functions visually separate made it easier to design and debug the system. The ESP32 section represents the control logic, the H-bridge section represents the motor-power switching stage, and the voltage-regulator section shows how the board was supposed to generate the required power rails.
 
-The original design also included encoder feedback because closed-loop motor control was considered useful for future speed regulation. However, the encoder system was not completed during the final build. For the final report, the encoder path should be interpreted as an intended or stretch design feature rather than a validated final function.
+The original design also included encoder feedback because closed-loop motor control was considered useful for future speed regulation. However, the final purchased and used motors were basic TT DC gearbox motors without built-in encoders. For the final report, the encoder path should be interpreted as an earlier design goal and future improvement rather than a validated final function.
 
 ## How the Block Diagram Meets Product Requirements
 
@@ -59,3 +59,4 @@ The block diagram image used on this page is included directly in this repositor
 - [Block Diagram PNG](314_KPhang_BlockDiagram.png)
 
 A future cleanup item is to include the editable source file for this diagram, such as a Draw.io, PowerPoint, or other source file, as a zipped archive in this folder.
+

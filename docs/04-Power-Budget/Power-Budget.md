@@ -25,7 +25,7 @@ The power budget was used to compare expected current draw against the current c
 
 The ESP32 and logic-side motor-driver inputs require a stable 3.3 V supply. These loads are relatively low compared to the motors, but they are sensitive to voltage stability. If the 3.3 V rail fails, the microcontroller cannot reliably boot, program, or send motor-control signals.
 
-The motors require a separate 6 V supply because motor loads can draw much higher current, especially during startup, direction changes, or stall conditions. The 6 V rail therefore needed more current margin than the logic rail. The selected 6 V regulator provided enough margin for the final test setup, and this was confirmed by the fact that the 6 V rail worked on the final board.
+The final motors were basic TT DC gearbox motors rated for 3 to 6 V operation. These motors draw much more current during startup or stall than during normal no-load operation, so the 6 V rail needed more current margin than the logic rail. The selected 6 V regulator provided enough margin for the final test setup, and this was confirmed by the fact that the 6 V rail worked on the final board.
 
 ## Estimated Rail Summary
 
@@ -49,3 +49,4 @@ The full power budget files are linked below:
 
 - [Power Budget PDF](Power-Budget.pdf)
 - [Power Budget Excel File](Power-Budget.xlsx)
+

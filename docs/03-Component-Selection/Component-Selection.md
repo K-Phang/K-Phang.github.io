@@ -10,7 +10,7 @@ I was responsible for the **B1 Propulsion subsystem** for Team 201's rover proje
 
 The propulsion subsystem was intended to receive commands from the team communication system and translate those commands into motor direction and speed control. The final design used an ESP32-based controller, a motor-driver stage, a 6 V motor rail, and a planned 3.3 V logic rail.
 
-The original design also included encoder feedback as a stretch goal. Encoder feedback was not used in the final implementation, so the final propulsion module should be treated as an **open-loop motor-control subsystem**.
+The original design also considered motors with encoder feedback as a stretch goal. The final purchased and used motors were basic TT DC gearbox motors without built-in encoders, so encoder feedback was not used in the final implementation. The final propulsion module should therefore be treated as an **open-loop motor-control subsystem**.
 
 ## Final Major Component Summary
 
@@ -170,3 +170,4 @@ The selected components formed a propulsion subsystem built around an ESP32 cont
 The **ESP32-S3-WROOM-1-N4** was selected as the main controller because it provided enough GPIO, strong documentation, and compatibility with the team's ESP32 development workflow. The **AP63203WU-7** was selected for the 3.3 V logic rail because it simplified the design with a fixed output, although this part of the final board did not work due to layout/routing issues. The **LMZ23610TZ/NOPB** was selected for the 6 V motor rail because it provided strong current margin, and this rail successfully worked in the final board. The **TB67H450FNG,EL** was selected for bidirectional motor control, though a future design should consider a newer motor-driver option with better lifecycle support and clearer current margin.
 
 Overall, the component choices were reasonable for the intended design, but the final project showed that correct layout, programming access, and testability were just as important as selecting capable parts.
+

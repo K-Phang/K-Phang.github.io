@@ -6,7 +6,7 @@ title: Module Requirements
 
 This page defines the requirements for my individual module: **K Phang, B1 Propulsion, message ID D**, for Team 201's rover project, **The Duck**.
 
-The B1 propulsion module was responsible for controlling the drive motors used to move The Duck. The original goal was to create an ESP32-based motor-control board that could receive team communication commands, drive the propulsion motors through an H-bridge, and eventually support encoder feedback for closed-loop speed control. During final implementation, the module was reduced to basic open-loop motor control because encoder feedback remained a stretch goal and the PCB had bring-up issues.
+The B1 propulsion module was responsible for controlling the drive motors used to move The Duck. The original goal was to create an ESP32-based motor-control board that could receive team communication commands, drive the propulsion motors through an H-bridge, and eventually support encoder feedback for closed-loop speed control. The original propulsion plan considered motors with encoder feedback, but the final purchased and used motors were basic TT DC gearbox motors without built-in encoders. During final implementation, the module was reduced to basic open-loop motor control because encoder feedback was no longer part of the final motor hardware and the PCB had bring-up issues.
 
 ## Final Module Scope
 
@@ -46,3 +46,4 @@ The most successful part of the module was the **motor-power side**. The 6 V rai
 The weakest part of the module was **board bring-up and debugging**. The missing programming header made the soldered ESP32 difficult to program directly, and the failed 3.3 V regulator rail prevented the board from operating as a fully standalone controller. Because of this, the final test setup required an external ESP32 breadboard/devkit instead of relying only on the PCB.
 
 The encoder requirement was not completed. It should be treated as a future improvement rather than a final working feature. For the final version of this report, the propulsion subsystem should be described as an **open-loop motor-control module**, not a closed-loop encoder-controlled module.
+
