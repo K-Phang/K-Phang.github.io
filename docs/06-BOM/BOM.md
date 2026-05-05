@@ -12,7 +12,7 @@ The purpose of the BOM is to identify the parts required to manufacture and asse
 
 ## Final BOM Screenshot
 
-![B1 Propulsion BOM](BOM-Screenshot.png){ width="900" }
+![B1 Propulsion BOM](BOM-Screenshot.jpg){ width="900" }
 
 ## Major Components
 
