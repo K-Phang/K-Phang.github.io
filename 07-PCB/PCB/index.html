@@ -26,7 +26,7 @@
 
     
       
-        <title>Module's PCB - EGR 314 K Phang Data Sheet</title>
+        <title>PCB Design - EGR 314 K Phang Data Sheet</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pcb" class="md-skip">
+        <a href="#pcb-design" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Module's PCB
+              PCB Design
             
           </span>
         </div>
@@ -604,6 +604,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -632,6 +634,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -640,9 +644,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#pcb" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      PCB
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-pcb-design-from-ecad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final PCB Design from ECAD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raw-pcb-before-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raw PCB Before Population
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-populated-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Populated PCB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-bring-up-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Bring-Up Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-pcb-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final PCB Review
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Files
     </span>
   </a>
   
@@ -753,6 +811,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -761,9 +821,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#pcb" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      PCB
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-pcb-design-from-ecad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final PCB Design from ECAD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raw-pcb-before-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raw PCB Before Population
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-populated-pcb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Populated PCB
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-bring-up-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Bring-Up Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-pcb-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final PCB Review
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      PCB Files
     </span>
   </a>
   
@@ -792,9 +906,50 @@
   
 
 
-  <h1>PCB</h1>
-
-<h2 id="pcb">PCB</h2>
+<h1 id="pcb-design">PCB Design</h1>
+<h2 id="overview">Overview</h2>
+<p>This page documents the final PCB design for my <strong>B1 Propulsion subsystem</strong> for Team 201's project, <strong>The Duck</strong>. The PCB was designed to integrate the ESP32 controller, 3.3 V logic regulator, 6 V motor rail, H-bridge motor driver, connectors, and supporting passives into a single propulsion-control board.</p>
+<p>The final PCB was manufactured and assembled, but it did not become a fully standalone working controller. The <strong>6 V rail worked</strong> and was usable for motor power. The <strong>3.3 V rail did not work</strong> because of a layout/routing issue around the switching regulator and inductor path. The ESP32-S3-WROOM-1-N4 was soldered onto the board, but because of missing programming-header support and the failed 3.3 V rail, final testing required an external ESP32 breadboard/devkit setup.</p>
+<h2 id="final-pcb-design-from-ecad">Final PCB Design from ECAD</h2>
+<p>The image below shows the final PCB layout from KiCad. This is the board design that was used for fabrication.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../PCB-ECAD-Front.png" data-desc-position="bottom"><img alt="B1 Propulsion PCB ECAD Front" src="../PCB-ECAD-Front.png" width="900"></a></p>
+<p><strong>Figure 1:</strong> Final B1 Propulsion PCB design from KiCad.</p>
+<p>A separate bottom-side ECAD screenshot was not available because the final documentation was captured from the main KiCad PCB layout view. The fabricated board back side is shown in the raw PCB section below.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../PCB-ECAD-Back.png" data-desc-position="bottom"><img alt="B1 Propulsion PCB ECAD Reference" src="../PCB-ECAD-Back.png" width="900"></a></p>
+<p><strong>Figure 2:</strong> ECAD reference image for the PCB design.</p>
+<h2 id="raw-pcb-before-population">Raw PCB Before Population</h2>
+<p>The following images show the manufactured raw PCB before components were populated.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../PCB-Raw-Front.jpg" data-desc-position="bottom"><img alt="Raw PCB Front" src="../PCB-Raw-Front.jpg" width="700"></a></p>
+<p><strong>Figure 3:</strong> Raw B1 Propulsion PCB front side before population.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../PCB-Raw-Back.jpg" data-desc-position="bottom"><img alt="Raw PCB Back" src="../PCB-Raw-Back.jpg" width="700"></a></p>
+<p><strong>Figure 4:</strong> Raw B1 Propulsion PCB back side before population.</p>
+<h2 id="final-populated-pcb">Final Populated PCB</h2>
+<p>The following images show the populated PCB after soldering.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../PCB-Populated-Front.jpg" data-desc-position="bottom"><img alt="Populated PCB Front" src="../PCB-Populated-Front.jpg" width="700"></a></p>
+<p><strong>Figure 5:</strong> Populated B1 Propulsion PCB front side.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../PCB-Populated-Back.jpg" data-desc-position="bottom"><img alt="Populated PCB Back" src="../PCB-Populated-Back.jpg" width="700"></a></p>
+<p><strong>Figure 6:</strong> Populated B1 Propulsion PCB back side.</p>
+<h2 id="pcb-bring-up-results">PCB Bring-Up Results</h2>
+<p>The final PCB was partially successful. The <strong>6 V rail worked</strong>, which allowed the board to support the motor-power side of the propulsion system. This confirmed that the motor-power section of the design was usable.</p>
+<p>The <strong>3.3 V rail did not work</strong>. The issue was traced to the regulator layout/routing, specifically the inductor path and grounding around the 3.3 V switching regulator. Because the ESP32 and logic-side motor-driver circuitry require 3.3 V, this prevented the board from operating as a complete standalone propulsion controller.</p>
+<p>The board also had a missing programming-header issue. The ESP32-S3-WROOM-1-N4 was soldered onto the PCB, but programming and debugging access was not properly designed into the board. To continue testing, an external ESP32 breadboard/devkit setup was used, and data/control wires were connected manually where possible.</p>
+<h2 id="final-pcb-review">Final PCB Review</h2>
+<p>The PCB successfully demonstrated the physical integration of the propulsion subsystem into a manufactured board. It included the intended major sections: power regulation, ESP32 controller area, H-bridge motor driver, motor connectors, communication headers, and board labeling.</p>
+<p>The main failures were related to bring-up and testability. The board needed better debug access, especially for programming the ESP32 and probing the power rails. A future PCB revision should include:</p>
+<ol>
+<li>A dedicated ESP32 programming header.</li>
+<li>Clearly labeled 3.3 V, 6 V, input voltage, and ground test points.</li>
+<li>Status LEDs for each power rail.</li>
+<li>A corrected 3.3 V regulator layout based directly on the datasheet reference design.</li>
+<li>More conservative routing around the regulator, inductor, and ground return path.</li>
+<li>Clear separation between motor-power routing and logic-signal routing.</li>
+</ol>
+<h2 id="pcb-files">PCB Files</h2>
+<p>The final PCB-related files are linked below:</p>
+<ul>
+<li><a href="../KPhang_B1_ECAD_Project.zip">Final ECAD Project ZIP</a></li>
+<li><a href="../KPhang_B1_Gerbers.zip">Gerber / JLCPCB Fabrication ZIP</a></li>
+</ul>
 
 
 
