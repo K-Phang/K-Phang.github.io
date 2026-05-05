@@ -17,7 +17,7 @@ The final power budget is an estimate based on the selected major components and
 
 ## Power Budget Image
 
-![B1 Propulsion Power Budget](KPhang_B1_Power_Budget.png){ width="900" }
+![B1 Propulsion Power Budget](Power-Budget.png){ width="900" }
 
 ## How the Power Budget Was Used
 
@@ -48,5 +48,6 @@ The failed 3.3 V rail also showed why test points and staged board bring-up matt
 The full power budget files are linked below:
 
 - [Power Budget PDF](Power-Budget.pdf)
-- [Power Budget Excel File](KPhang_B1_Power_Budget.xlsx)
+- [Power Budget Excel File](Power-Budget.xlsx)
+
 
