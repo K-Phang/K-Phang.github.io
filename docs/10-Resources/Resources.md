@@ -39,11 +39,11 @@ The purpose of this page is to make the final design files easy to find from one
 
 The final B1 propulsion board did not become a fully standalone working controller because the onboard 3.3 V rail failed and the ESP32 programming-header support was missing. Because of this, the final testing relied on an external ESP32 breadboard/devkit setup where needed.
 
-A final ESP32 code project ZIP should be added to this page if a complete code project is available. The recommended file name is **KPhang_B1_ESP32_Code.zip**, and it should be placed in **docs/10-Resources/**.
+The final ESP32 code project ZIP is included below as **KPhang_B1_ESP32_Code.zip**. This file contains the ESP32 UART and motor-control test code used for the B1 propulsion subsystem.
 
 | Resource | File |
 |---|---|
-| ESP32 code project ZIP | Add final code ZIP here if available |
+| ESP32 code project ZIP | [KPhang_B1_ESP32_Code.zip](KPhang_B1_ESP32_Code.zip) |
 
 ## Video Resources
 
@@ -58,4 +58,6 @@ No custom CAD or 3D-printed mechanical part file was required for my individual 
 The most important resources for grading are the schematic PDF, ECAD project ZIP, BOM files, PCB images, and Gerber/JLCPCB fabrication ZIP. These files document the final state of the B1 propulsion hardware and allow the design to be reviewed beyond the rendered website pages.
 
 The current resource set supports the final report because it includes both human-readable documentation files and source/fabrication files. The remaining optional improvement would be adding a final ESP32 code project ZIP if a complete code project is available.
+
+
 
